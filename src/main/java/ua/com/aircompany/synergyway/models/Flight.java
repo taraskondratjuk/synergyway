@@ -2,16 +2,18 @@ package ua.com.aircompany.synergyway.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 import ua.com.aircompany.synergyway.settings.FlightStatus;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
 @EqualsAndHashCode
-@ToString(exclude = {"airCompany","airplane"})
+@ToString(exclude = {"airCompany", "airplane"})
 
 
 @Entity
@@ -37,25 +39,30 @@ public class Flight {
     private double estimatedFlightTime;
 
     @Column(name = "ended_at")
-    private double endedAt;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date endedAt;
 
     @Column(name = "delay_started_at")
-    private double delayStartedAt;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date delayStartedAt;
 
     @Column(name = "created_at")
-    private double createdAt;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date createdAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="aircompany_id", insertable=false, updatable=false)
+    @JoinColumn(name = "aircompany_id", insertable = false, updatable = false)
     @JsonIgnore
     private AirCompany airCompany;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "airplane_id")
+    @JsonIgnore
     private Airplane airplane;
 
-    public Flight(String departureCountry, String destinationCountry, double distance, double estimatedFlightTime, double endedAt, double delayStartedAt, double createdAt) {
+    public Flight(FlightStatus flightStatus, String departureCountry, String destinationCountry, double distance, double estimatedFlightTime, Date endedAt, Date delayStartedAt, Date createdAt) {
         this.flightStatus = FlightStatus.PENDING;
+        this.flightStatus = flightStatus;
         this.departureCountry = departureCountry;
         this.destinationCountry = destinationCountry;
         this.distance = distance;

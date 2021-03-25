@@ -2,7 +2,10 @@ package ua.com.aircompany.synergyway.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.sql.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,9 +39,11 @@ public class Airplane {
     private String type;
 
     @Column(name = "created_at")
-    private int createdAt;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date createdAt;
 
     @OneToOne()
+    @JsonIgnore
     private Flight flight;
 
     @ManyToOne( fetch = FetchType.LAZY)
@@ -47,7 +52,7 @@ public class Airplane {
     private AirCompany airCompany;
 
 
-    public Airplane(String name, int factorySerialNumber, int numberOfFlights, double flightsDistance, double fuelCapacity, String type, int createdAt) {
+    public Airplane(String name, int factorySerialNumber, int numberOfFlights, double flightsDistance, double fuelCapacity, String type, Date createdAt) {
         this.name = name;
         this.factorySerialNumber = factorySerialNumber;
         this.numberOfFlights = numberOfFlights;

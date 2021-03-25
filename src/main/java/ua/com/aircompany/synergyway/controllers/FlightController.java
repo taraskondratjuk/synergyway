@@ -41,7 +41,7 @@ public class FlightController {
             updateFlight.setDistance(flight.getDistance());
             updateFlight.setCreatedAt(flight.getCreatedAt());
             updateFlight.setEstimatedFlightTime(flight.getEstimatedFlightTime());
-            updateFlight.setEndedAt(flight.getEndedAt());
+//            updateFlight.setEndedAt(flight.getEndedAt());
             updateFlight.setDelayStartedAt(flight.getDelayStartedAt());
             flightDAO.save(updateFlight);
         }
