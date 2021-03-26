@@ -104,8 +104,19 @@ public class AirCompanyControl {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
+
+
+    @PostMapping("/{aircompanyId}/status/{status}")
+    public List<Flight> findAirCompanyFlightsByStatus(@PathVariable int aircompanyId, @PathVariable String status) {
+        AirCompany airCompany = airCompanyDAO.getOne(aircompanyId);
+        List<Flight> airCompanyFlight = airCompany.getFlights();
+        List<Flight> statusFlightList = airCompanyFlight.stream().filter(flight -> flight.getFlightStatus().toString().equals(status)).collect(Collectors.toList());
+        return statusFlightList;
+    }
+
+
+
 
 
 }

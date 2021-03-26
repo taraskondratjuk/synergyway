@@ -3,9 +3,12 @@ package ua.com.aircompany.synergyway.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+import sun.util.calendar.BaseCalendar;
+import sun.util.calendar.LocalGregorianCalendar;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Calendar;
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor

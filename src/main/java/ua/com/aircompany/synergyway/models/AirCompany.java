@@ -1,10 +1,11 @@
 package ua.com.aircompany.synergyway.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,7 +32,8 @@ public class AirCompany {
 
     @Column(name = "founded_at")
     @DateTimeFormat(pattern = "dd.MM.yyyy")
-    private Date foundedAt;
+    private Date foundedAt= new Date();
+
 
     @OneToMany
     @JoinColumn(name = "aircompany_id")
@@ -47,6 +49,4 @@ public class AirCompany {
         this.type = type;
         this.foundedAt = foundedAt;
     }
-
-
 }

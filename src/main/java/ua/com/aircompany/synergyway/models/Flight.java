@@ -8,6 +8,7 @@ import ua.com.aircompany.synergyway.settings.FlightStatus;
 import javax.persistence.*;
 import java.util.Date;
 
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
@@ -46,6 +47,10 @@ public class Flight {
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date delayStartedAt;
 
+    @Column(name = "started_at")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private Date startedAt;
+
     @Column(name = "created_at")
     @DateTimeFormat(pattern = "dd.MM.yyyy")
     private Date createdAt;
@@ -60,13 +65,13 @@ public class Flight {
     @JsonIgnore
     private Airplane airplane;
 
-    public Flight(FlightStatus flightStatus, String departureCountry, String destinationCountry, double distance, double estimatedFlightTime, Date endedAt, Date delayStartedAt, Date createdAt) {
-        this.flightStatus = FlightStatus.PENDING;
-        this.flightStatus = flightStatus;
+    public Flight(String departureCountry, String destinationCountry, double distance, double estimatedFlightTime,Date startedAt, Date endedAt, Date delayStartedAt,  Date createdAt) {
+        this.flightStatus = FlightStatus.ACTIVE;
         this.departureCountry = departureCountry;
         this.destinationCountry = destinationCountry;
         this.distance = distance;
         this.estimatedFlightTime = estimatedFlightTime;
+        this.startedAt=startedAt;
         this.endedAt = endedAt;
         this.delayStartedAt = delayStartedAt;
         this.createdAt = createdAt;
