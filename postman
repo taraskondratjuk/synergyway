@@ -1,0 +1,368 @@
+/ 20210326192152
+// https://www.postman.com/collections/35e74bab4a5a2d60940e
+
+{
+  "info": {
+    "_postman_id": "61a71eeb-80ca-4051-9563-099f91f37930",
+    "name": "synergyway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "localhost/api/airplane/**    Here we can do some operations with Flights",
+      "item": [
+        {
+          "name": "Here we can create new Airplane",
+          "id": "0f1948f1-e6fb-4cf2-aa40-ffdb4020b97e",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"MMD-35\",\r\n    \"factorySerialNumber\":4467899,\r\n    \"numberOfFlights\":40,\r\n    \"flightsDistance\":2000,\r\n    \"fuelCapacity\":900,\r\n    \"type\":\"passanger\",\r\n    \"createdAt\":\"2021-03-22\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost/api/airplane/save"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can find all Airplanes",
+          "id": "8ebd1aee-62bb-49c8-956c-7d8a8ce4c8aa",
+          "request": {
+            "method": "GET",
+            "header": [
+              
+            ],
+            "url": "localhost/api/airplane/getAll"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can delete Airplane by {id}",
+          "id": "7816581b-f035-414e-bf47-899bc3993526",
+          "request": {
+            "method": "GET",
+            "header": [
+              
+            ],
+            "url": "localhost/api/airplane/delete/2"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can update Airplane by {id}",
+          "id": "08399da1-6ef3-4499-acd5-2274fd46e40e",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Boing-350\",\r\n    \"factorySerialNumber\":9639992,\r\n    \"numberOfFlights\":10,\r\n    \"flightsDistance\":5000,\r\n    \"fuelCapacity\":3000,\r\n    \"type\":\"passanger\",\r\n    \"createdAt\":1995\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost/api/airplane/update/3"
+          },
+          "response": [
+            
+          ]
+        }
+      ],
+      "id": "eaf78fd9-3e8b-446f-bcc4-9476f575f63c"
+    },
+    {
+      "name": "localhost/api/flight/**   Here we can do some operations with Flights",
+      "item": [
+        {
+          "name": "Here we can create new Flight",
+          "id": "5daa522f-3fdc-4ec2-accb-9fdf101a3f31",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"departureCountry\":\"Lviv\",\r\n  \"destinationCountry\":\"Dnipro\",\r\n  \"distance\":\"625\",\r\n  \"createdAt\":\"2021-01-18\",\r\n  \"estimatedFlightTime\": \"1.58\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost/api/flight/save"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can get all Flight",
+          "id": "2f047c2d-6e2e-4c43-8185-4db35996833d",
+          "request": {
+            "method": "GET",
+            "header": [
+              
+            ],
+            "url": "localhost/api/flight/getAll"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can detele Flight by {id}",
+          "id": "0ca55d35-8a4e-4538-a6cd-ded00910ad48",
+          "request": {
+            "method": "GET",
+            "header": [
+              
+            ],
+            "url": "localhost/api/flight/delete/1"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can add to someone Flight {id} some Airplane {id}",
+          "id": "4f46ee52-1b5d-4ee0-8255-ed2f4cee0efb",
+          "request": {
+            "method": "GET",
+            "header": [
+              
+            ],
+            "url": "localhost/api/flight/add/flight/10/airplane/1"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can update Flight to {id}",
+          "id": "55c391cb-fb64-4992-9add-5d86062d558e",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"departureCountry\":\"Poland\",\r\n  \"destinationCountry\":\"Italy\",\r\n  \"distance\":\"2500\",\r\n  \"createdAt\":12.20,\r\n  \"estimatedFlightTime\": 2.30,\r\n  \"endedAt\":14.50,\r\n  \"delayStartedAt\":null\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost/api/flight/update/1"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can change  status Flight {id} to status ACTIVE",
+          "id": "6087d3fc-8301-4a61-87e6-37b0dbc6c86b",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "flightStatus",
+                "value": "ACTIVE",
+                "type": "text"
+              }
+            ],
+            "url": "localhost/api/flight/changeStatus/flight/1/status/ACTIVE"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can find all Flights where status ACTIVE more than 24",
+          "id": "a39f056b-26fc-4005-b0ee-19387ab5937d",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/flight/findAllStatus/ACTIVE"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can find all Flights in COMPLETED status and difference between started and ended time is bigger than estimated flight time.",
+          "id": "cc1dd9fc-42b6-4314-a5bf-6f24490d87a3",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/flight/findAllFlights/COMPLETED"
+          },
+          "response": [
+            
+          ]
+        }
+      ],
+      "id": "99b05504-f9ac-453b-b0fb-64086283cf84"
+    },
+    {
+      "name": "localhost:8080/aircompany/***  Here we can do some operations with Air Company",
+      "item": [
+        {
+          "name": "Here we can create new Air Company",
+          "id": "b604ffa4-24ad-4bc6-b92b-fe90ffe6ca03",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Ukraine AirLine\",\r\n    \"type\":\"passenger\",\r\n    \"foundedAt\":\"1990-11-02\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost/api/aircompany/save"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can find all Air Company",
+          "id": "2fbcf123-4fb1-4343-bf3a-a387b6d25762",
+          "request": {
+            "method": "GET",
+            "header": [
+              
+            ],
+            "url": "localhost/api/aircompany/getAll"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can delete Air Company by {id}",
+          "id": "de1c1ad6-bda3-4644-a665-3a41aa4b5158",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/aircompany/delete/2"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can update Air Company by {id}",
+          "id": "a7151c9e-8490-4e3c-8d07-aff1fb2add3d",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Ukraine\",\r\n    \"type\":\"pas\",\r\n    \"foundedAt\":19\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "localhost/api/aircompany/update/3"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can add  into  Air Company {id}  Airplane {id}",
+          "id": "2d0238a4-db01-4755-be0b-7ad46fe7bf10",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/aircompany/add/aircompany/2/airplane/10"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can add into Air Company {id} Flight {id}",
+          "id": "938726d6-96cb-4dda-82fc-a0012c6a3917",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/aircompany/add/aircompany/2/flight/9"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can change Air Company {id1}  Airplane {id1} to  Air Company {id2}  Airplane {id2}",
+          "id": "d29b0811-1660-44d9-8cff-f180a03a20bf",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/aircompany/change/aircompany/1/airplane/5/to/aircompany/2/airplane/6"
+          },
+          "response": [
+            
+          ]
+        },
+        {
+          "name": "Here we can find all Air Company {id} Flights with status PENDING",
+          "id": "deca0f73-2abc-48bc-9349-7fcacfa34753",
+          "request": {
+            "method": "POST",
+            "header": [
+              
+            ],
+            "url": "localhost/api/aircompany/1/status/PENDING"
+          },
+          "response": [
+            
+          ]
+        }
+      ],
+      "id": "badd6e31-17d5-423c-bbb1-85f0d129f6df"
+    }
+  ]
+}
