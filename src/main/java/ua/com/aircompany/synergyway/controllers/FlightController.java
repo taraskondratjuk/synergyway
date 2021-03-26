@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/flight")
+@CrossOrigin
 public class FlightController {
     private AirplaneDAO airplaneDAO;
     private FlightDAO flightDAO;

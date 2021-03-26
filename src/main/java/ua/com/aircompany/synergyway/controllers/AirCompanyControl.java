@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/aircompany")
+@CrossOrigin
 public class AirCompanyControl {
 
     private AirCompanyDAO airCompanyDAO;

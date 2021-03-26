@@ -10,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/airplane")
+@CrossOrigin
 public class AirplaneController {
     private AirplaneDAO airplaneDAO;
 
