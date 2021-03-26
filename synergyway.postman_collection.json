@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "61a71eeb-80ca-4051-9563-099f91f37930",
+		"name": "synergyway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/airplane/**",
+			"item": [
+				{
+					"name": "(Here we can create new Airplane)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Boing-747\",\r\n    \"factorySerialNumber\":1,\r\n    \"numberOfFlights\":0,\r\n    \"flightsDistance\":5000,\r\n    \"fuelCapacity\":3000,\r\n    \"type\":\"passanger\",\r\n    \"createdAt\":2001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/airplane/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"airplane",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can get all Airplanes)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can delete Airplane by ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can update Airplane by ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost/8080/flight/**",
+			"item": [
+				{
+					"name": "(Here we can create new Flight)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Boing-747\",\r\n    \"factorySerialNumber\":1,\r\n    \"numberOfFlights\":0,\r\n    \"flightsDistance\":5000,\r\n    \"fuelCapacity\":3000,\r\n    \"type\":\"passanger\",\r\n    \"createdAt\":2001\r\n\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/flight/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flight",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can get all Flight)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can detele Flight by ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can add someone Airplane to someone Flight)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can update Flight to ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can change Flight status by ID )",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Here we can find all Flights where status ACTIVE more than 24",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Here we can find all Flights in COMPLETED status and difference between started and ended time is bigger than estimated flight time.",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "TEST Here we can create any field",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:8080/aircompany/***   Here we can do somethings  with Air Company",
+			"item": [
+				{
+					"name": "(Here we can create new Air Company)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ukraine AirLin12\",\r\n    \"type\":\"passenger\",\r\n    \"foundedAt\":1995\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/aircompany/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"aircompany",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can get all Air Company)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can delete Air Company by ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can update Air Company by ID)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can add Airplane by ID into our Air Company)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can add Flight by ID into our Air Company)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can change Airplane between Air Company)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "(Here we can find all Air Company Flights by status)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
