@@ -76,7 +76,7 @@ public class AirCompanyControl {
             List<Flight> flights = flightDAO.findAll();
             List<Flight> airCompanyFlight = airCompany.getFlights();
             List<Flight> findFlight = flights.stream().filter(flight -> flight.getId() == flightId).collect(Collectors.toList());
-            System.out.println(ghjg);
+            System.out.println("fd");
             airCompanyFlight.addAll(findFlight);
             airCompanyDAO.save(airCompany);
         } catch (Exception e) {
